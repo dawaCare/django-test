@@ -34,3 +34,9 @@ webencodings==0.5
 whitenoise==3.3.0
 sqlparse==0.2.3
 virtualenv==15.1.0
+tablib
+diff-match-patch
+openpyxl
+sphinx
+sphinx-rtd-theme
+mysql-python
