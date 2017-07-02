@@ -13,7 +13,7 @@ from django.db.models import fields
 #     followup_appt = models.DateField()
 #     reminder_freq = models.PositiveSmallIntegerField()
 
-@python_2_unicode_compatible
+
 class Outpatient(models.Model):
     visit_date = models.DateTimeField(blank=True)
     first_name = models.CharField('First Name', max_length=100)
