@@ -25,7 +25,7 @@ urlpatterns = [
     url(r'^logout/$', users_views.logout, name='logout'),
     url(r'^signup/', users_views.signup, name='signup'),
     url(r'^dashboard/', dashboard_views.IndexView.as_view(), name='dashboard'),
-    url(r'^form/', dashboard_views.MyFormView.as_view(), name='form'),
+    # url(r'^form/', dashboard_views.MyFormView.as_view(), name='form'),
     url(r'^list/$', dashboard_views.Patient_list.as_view(), name='list'),
     url(r'^$', users_views.index, name='index'),
 ]
