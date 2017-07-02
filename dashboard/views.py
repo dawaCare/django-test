@@ -20,14 +20,14 @@ from dashboard.models import Outpatient
 # class Patient_list(ListView):
 #     model = Patient
 #
-#
-# class IndexView(generic.ListView):
-#     template_name = 'dashboard/dashboard.html'
-#     context_object_name = 'Patient'
-#     def get_queryset(self):
-#         """Return the last five visit."""
-#         return Patient.objects.order_by('initial_visit')[:5]
-#
+
+class IndexView(generic.ListView):
+    template_name = 'dashboard/dashboard.html'
+    context_object_name = 'Outpatient'
+    def get_queryset(self):
+        """Return the last five visit."""
+        return Outpatient.objects.order_by('initial_visit')[:5]
+
 # class MyFormView(FormView):
 #     form_class = Patient_form
 #     template_name = 'dashboard/form.html'
