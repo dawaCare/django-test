@@ -5,4 +5,4 @@ from dashboard.models import Outpatient
 class OutpatientAdmin(admin.ModelAdmin):
     list_display = ('visit_date', 'first_name', 'last_name', 'age', 'gender')
 
-admin.site.register(Patient, OutpatientAdmin)
+admin.site.register(Outpatient, OutpatientAdmin)
