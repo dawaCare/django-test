@@ -5,13 +5,13 @@ from django.views.generic import View
 from django.views.generic.list import ListView
 import json
 from django import forms
-from dashboard.forms import Patient_form
+# from dashboard.forms import Patient_form
 from dashboard.models import Outpatient
-from django.views.generic.edit import FormView
+# from django.views.generic.edit import FormView
 
 
 
-# 
+#
 # # Create your views here.
 #
 #
