@@ -39,3 +39,4 @@ diff-match-patch
 openpyxl
 sphinx
 sphinx-rtd-theme
+django-import-export
