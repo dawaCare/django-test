@@ -97,7 +97,7 @@ elif os.environ.get('IMPORT_EXPORT_TEST_TYPE') == 'postgres':
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'import_export',
+            'NAME': 'postgres',
             'USER': os.environ.get('IMPORT_EXPORT_POSTGRESQL_USER'),
             'PASSWORD': os.environ.get('IMPORT_EXPORT_POSTGRESQL_PASSWORD'),
             'HOST': 'localhost',

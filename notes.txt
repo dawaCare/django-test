@@ -104,3 +104,6 @@ July 2
       - Database migrated - postgres works
       - Use this command to run python scripts from CLI to heroku application
         "heroku run python3 manage.py xxxx -a dawa-test"
+July 3
+      - Need to import previous collected data to app
+      
