@@ -80,19 +80,11 @@ WSGI_APPLICATION = 'django_test.wsgi.application'
 
 
 ##Added import_export settings code
-if os.environ.get('IMPORT_EXPORT_TEST_TYPE') == 'mysql-innodb':
-    IMPORT_EXPORT_USE_TRANSACTIONS = True
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'TEST_NAME': 'import_export_test',
-            'USER': os.environ.get('IMPORT_EXPORT_MYSQL_USER', 'root'),
-            'OPTIONS': {
-               'init_command': 'SET storage_engine=INNODB',
-            }
-        }
-    }
-elif os.environ.get('IMPORT_EXPORT_TEST_TYPE') == 'postgres':
+DATABASES = {
+    'default': dj_database_url.config(default=config('DATABASE_URL'),)
+}
+
+if os.environ.get('IMPORT_EXPORT_TEST_TYPE') == 'postgres':
     IMPORT_EXPORT_USE_TRANSACTIONS = True
     DATABASES = {
         'default': {
@@ -102,6 +94,18 @@ elif os.environ.get('IMPORT_EXPORT_TEST_TYPE') == 'postgres':
             'PASSWORD': os.environ.get('IMPORT_EXPORT_POSTGRESQL_PASSWORD'),
             'HOST': 'localhost',
             'PORT': 5432
+        }
+    }
+elif os.environ.get('IMPORT_EXPORT_TEST_TYPE') == 'mysql-innodb':
+    IMPORT_EXPORT_USE_TRANSACTIONS = True
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'TEST_NAME': 'import_export_test',
+            'USER': os.environ.get('IMPORT_EXPORT_MYSQL_USER', 'root'),
+            'OPTIONS': {
+               'init_command': 'SET storage_engine=INNODB',
+            }
         }
     }
 else:
@@ -121,9 +125,6 @@ else:
 db_from_env = dj_database_url.config(conn_max_age=500)
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', cast=bool)
-DATABASES = {
-    'default': dj_database_url.config(default=config('DATABASE_URL'),)
-}
 
 
 
