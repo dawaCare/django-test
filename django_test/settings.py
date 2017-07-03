@@ -43,7 +43,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',
+#    'django.contrib.sites',
 
 )
 
@@ -116,36 +116,17 @@ else:
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-#DATABASES = {
-    #'default': {
-    #    'ENGINE': 'django.db.backends.sqlite3',
-    #    'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 
-    #'default': {
-    #    'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    #    'NAME': os.path.join ('postgres'),
-    #    'USER' : 'postgres',
-    #    'PASSWORD': 'C@rp3D!3m',
-    #    'HOST': '',
-    #    'PORT' : '5433'
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', cast=bool)
 DATABASES = {
-#    'default': {
-    #    'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    #    'NAME': config('DB_NAME'),
-    #    'USER': config('DB_USER'),
-    #    'PASSWORD': config('DB_PASSWORD'),
-    #    'HOST': config('DB_HOST'),
-    #    'PORT': '5432',
-    #    dj_database_url.config(default=config('DATABASE_URL'))
     'default': dj_database_url.config(default=config('DATABASE_URL'),)
-
-
-
 }
+
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
@@ -164,7 +145,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 
-LOGIN_REDIRECT_URL = '/dashboard'
+LOGIN_REDIRECT_URL = '/dashboard/'
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
