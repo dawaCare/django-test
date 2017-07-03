@@ -20,6 +20,8 @@ from django.contrib.auth import views as auth_views
 from dashboard import views as dashboard_views
 from users import views as users_views
 
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 admin.autodiscover()
 
 
@@ -34,3 +36,5 @@ urlpatterns = [
     # url(r'^list/$', dashboard_views.Patient_list.as_view(), name='list'),
     url(r'^$', users_views.index, name='index'),
 ]
+
+urlpatterns += staticfiles_urlpatterns()

@@ -34,9 +34,9 @@ ALLOWED_HOSTS = ['dawa-test.herokuapp.com', 'localhost']
 # Application definition
 
 INSTALLED_APPS = (
+    'import_export'
     'dashboard',
     'users',
-    'import_export',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
