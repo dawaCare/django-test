@@ -16,7 +16,7 @@ from django.utils.encoding import python_2_unicode_compatible
 
 @python_2_unicode_compatible
 class Outpatient(models.Model):
-    visit_date = models.DateTimeField(blank=True)
+    visit_date = models.CharField(max_length=100, blank=True)
     first_name = models.CharField('First Name', max_length=100)
     last_name = models.CharField(max_length=100)
     # age contains invalid literals for float
