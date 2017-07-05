@@ -22,10 +22,8 @@ class Outpatient(models.Model):
     # age contains invalid literals for float
     age = models.CharField(max_length=50,blank=True, null=True)
     gender = models.CharField(max_length=20)
-    contact = models.PositiveIntegerField(null=True)
-    alt_contact = models.PositiveIntegerField(null=True)
-    # main_phone = models.PositiveIntegerField(null=True)
-    # alt_phone = models.PositiveIntegerField(null=True)
+    main_phone = models.PositiveIntegerField(null=True)
+    alt_phone = models.PositiveIntegerField(null=True)
     occupation = models.CharField(max_length=40)
     address = models.CharField(max_length=200)
     admitted = models.BooleanField(default=False)
