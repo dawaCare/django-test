@@ -23,6 +23,7 @@ class Outpatient(models.Model):
     age = models.CharField(max_length=50,blank=True, null=True)
     gender = models.CharField(max_length=20)
     contact = models.PositiveIntegerField(null=True)
+    alt_contact = models.PositiveIntegerField(null=True)
     # main_phone = models.PositiveIntegerField(null=True)
     # alt_phone = models.PositiveIntegerField(null=True)
     occupation = models.CharField(max_length=40)
