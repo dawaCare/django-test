@@ -51,7 +51,7 @@ class Outpatient(models.Model):
     contacted_patient = models.BooleanField(default=False)
     patient_showed_up = models.BooleanField(default=False)
     comment = models.TextField(blank=True, null=True)
-    patient_has_all_prescribed_medication = models.BooleanField(default=False)
+    has_all_medications = models.BooleanField(default=False)
     sent = models.BooleanField(default=False)
     issues_with_taking_medication = models.BooleanField(default=False)
     reminder_frequency = models.CharField(max_length=300, blank=True)
