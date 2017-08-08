@@ -1,5 +1,5 @@
 
 
-# Pre-production environment for testing deployment
+# Production environment for Django
 
-#This is a test environment for Django.
+
